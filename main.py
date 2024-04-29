@@ -19,9 +19,12 @@ class_names = ["Early blight", "Late blight", "healthy"]
 def predict_leaf_class(image_as_array):
     try:
         prediction = model.predict(image_as_array[np.newaxis, ...])
-        st.markdown(
-            f"#### The above leaf belongs to the {class_names[np.argmax(prediction)]} class"
-        )
+        if class_names[np.argmax(prediction)] == "healthy":
+            st.markdown(f"#### The above leaf is healthy")
+        else:
+            st.markdown(
+                f"#### The above leaf is suffering from {class_names[np.argmax(prediction)]}"
+            )
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")
 
@@ -46,7 +49,7 @@ if uploaded_file is not None:
         st.image(uploaded_file)
         predict_leaf_class(image_as_array)
         st.warning(
-            "Warning: If you reload the page, the uploaded image and prediction will disappear and then you have to reupload the image again to get the prediction"
+            "Warning: If you reload the page, the uploaded image and prediction will disappear and then you have to reupload the image again to get the prediction."
         )
     except Exception as e:
         st.error(f"An error occurred: {e}")
