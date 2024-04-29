@@ -1,0 +1,3 @@
+Farmers who grow potatoes face lot of economic losses every year because of various diseases that can happen to a potato plant. There are 2 common diseases i.e 1 - Early Blight(caused by fungus) 2 - Late Blight(caused by specific micro-organisms) and if farmers can detect these diseases early and apply appropriate treatment then it can save a lot of waste and prevent the economic loss. The treatment of early and late blights are little different so it is important to know which disease it is
+
+We will build a mobile application which farmers will use by going in the application and opening the camera from it of their phone through and taking the picture of leaf which will be detected as early blight, healthy, or late blight
