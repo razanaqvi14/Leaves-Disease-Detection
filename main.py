@@ -8,7 +8,7 @@ page_title = "Potato Leaf Health Assessment System"
 page_icon = ":potato:"
 layout = "centered"
 
-accuracy_of_model = 91.66
+accuracy_of_model = 95
 
 st.set_page_config(page_title=page_title, page_icon=page_icon, layout=layout)
 
@@ -17,12 +17,12 @@ st.title("Welcome to :orange[Potato] :green[Leaf] Health Assessment System")
 st.divider()
 
 st.info(
-    f"Note: This model is {accuracy_of_model}% accurate so it may make mistakes, consider confirming the information.\n\nThings to remember:\n - The image should contain a leaf, and the leaf itself should belong to a potato; otherwise, the model will not be able to assess that leaf correctly.\n - Before reuploading, please remove the uploaded image by clicking on the cross on the right side of the image's name or it will give errors.\n - If you reload the page, the uploaded image and prediction will be lost and you have to reupload the image to assess the leaf."
+    f"Note: A new and a better version of model is here with the accuracy of {accuracy_of_model}%. consider confirming the information.\n\nThings to remember:\n - The image should contain a leaf, and the leaf itself should belong to a potato; otherwise, the model will not be able to assess that leaf correctly.\n - Before reuploading, please remove the uploaded image by clicking on the cross on the right side of the image's name or it will give errors.\n - If you reload the page, the uploaded image and prediction will be lost and you have to reupload the image to assess the leaf."
 )
 
 
 def load_model():
-    return tf.keras.models.load_model("./models/model.keras")
+    return tf.keras.models.load_model("./models/1.keras")
 
 
 model = load_model()
